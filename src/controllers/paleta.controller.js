@@ -4,7 +4,9 @@ const findAllPaletasController = (req, res) => {
   const paletas = paletasService.findAllPaletasService();
 
   if (paletas.length == 0) {
-    return res.status(404).send({ message: "Não existe nenhuma paleta cadastrada!" })
+    return res
+      .status(404)
+      .send({ message: 'Não existe nenhuma paleta cadastrada!' });
   }
   res.send(paletas);
 };
@@ -13,13 +15,13 @@ const findByIdPaletaController = (req, res) => {
   const parametroId = Number(req.params.id);
 
   if (!parametroId) {
-    return res.status(400).send({ message: "Id inválido!" })
+    return res.status(400).send({ message: 'Id inválido!' });
   }
 
   const escolhaPaleta = paletasService.findByIdPaletaService(parametroId);
 
   if (!escolhaPaleta) {
-    return res.status(404).send({ message: "Paleta não encontrada!" })
+    return res.status(404).send({ message: 'Paleta não encontrada!' });
   }
   res.send(escolhaPaleta);
 };
@@ -34,9 +36,11 @@ const createPaletaController = (req, res) => {
     !paleta.foto ||
     !paleta.preco
   ) {
-    return res.status(400).send(
-      'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
-    );
+    return res
+      .status(400)
+      .send(
+        'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
+      );
   }
 
   const newPaleta = paletasService.createPaletaService(paleta);
@@ -47,7 +51,7 @@ const updatePaletaController = (req, res) => {
   const idParam = Number(req.params.id);
 
   if (!idParam) {
-    return res.status(400).send({ message: "Id inválido!" })
+    return res.status(400).send({ message: 'Id inválido!' });
   }
 
   const paletaEdit = req.body;
@@ -59,9 +63,11 @@ const updatePaletaController = (req, res) => {
     !paletaEdit.foto ||
     !paletaEdit.preco
   ) {
-    return res.status(400).send(
-      'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
-    );
+    return res
+      .status(400)
+      .send(
+        'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
+      );
   }
 
   const updatedPaleta = paletasService.updatePaletaService(idParam, paletaEdit);
@@ -72,7 +78,7 @@ const deletePaletaController = (req, res) => {
   const idParam = Number(req.params.id);
 
   if (!idParam) {
-    return res.status(400).send({ message: "Id inválido!" })
+    return res.status(400).send({ message: 'Id inválido!' });
   }
 
   paletasService.deletePaletaService(idParam);

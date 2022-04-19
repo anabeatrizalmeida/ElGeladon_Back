@@ -65,5 +65,5 @@ module.exports = {
   findByIdPaletaService,
   createPaletaService,
   updatePaletaService,
-  deletePaletaService
+  deletePaletaService,
 };
