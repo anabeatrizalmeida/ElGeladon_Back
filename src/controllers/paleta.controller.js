@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const findAllPaletasController = async (req, res) => {
   const allPaletas = await paletasService.findAllPaletasService();
 
-  if (paletas.length == 0) {
+  if (allPaletas.length == 0) {
     return res
       .status(404)
       .send({ message: 'Não existe nenhuma paleta cadastrada!' });
