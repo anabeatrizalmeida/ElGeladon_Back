@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectToDatabase = () => {
   mongoose
-    .connect('mongodb+srv://apielgeladon:admin@api-elgeladon.krhhh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    .connect('mongodb+srv://apielgeladon:admin@api-elgeladon.krhhh.mongodb.net/paletas-db?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
