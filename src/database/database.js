@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectToDatabase = () => {
   mongoose
-    .connect(process.env.DATABASE_URI, {
+    .connect('mongodb+srv://apielgeladon:admin@api-elgeladon.krhhh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
