@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectToDatabase = () => {
   mongoose
-    .connect(process.env.DATABASE_URI, {
+    .connect('mongodb+srv://databasepaletas:190706@cluster0.60dd0.mongodb.net/paletas-db?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
